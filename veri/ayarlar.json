@@ -1,0 +1,5 @@
+{
+  "simdi": "2026-11-16T10:00:00",
+  "oturum_musteri_id": null,
+  "aciklama": "Senaryo saati sabittir. EvBul'da kullanıcıya ait kayıt yoktur (oturum_musteri_id boş); hesaplama oranları parametreler.json dosyasındadır."
+}

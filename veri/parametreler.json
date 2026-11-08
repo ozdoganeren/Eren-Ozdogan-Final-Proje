@@ -1,0 +1,14 @@
+{
+  "_not": "Tüm oran ve tutarlar EĞİTİM AMAÇLI HAYALİ değerlerdir; gerçek mevzuat ve banka oranlarını yansıtmaz.",
+  "tapu_harci_orani_alici": 0.02,
+  "doner_sermaye_tl": 3500,
+  "dask_yaklasik_tl": 1800,
+  "ekspertiz_ucreti_tl": 6000,
+  "emlak_ofisi_satis_orani": 0.02,
+  "emlak_ofisi_kira_ay": 1,
+  "kdv_orani": 0.2,
+  "kredi_aylik_faiz": 0.0279,
+  "kredi_azami_vade_ay": 120,
+  "kredi_azami_oran": 0.5,
+  "supheli_fiyat_esigi": 0.6
+}
