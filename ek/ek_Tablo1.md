@@ -9,4 +9,4 @@
 | E07 | E205 Tapu başkasında | rehber | `ilan_detay`, `rehber_ara` | ilanlar.json + ek_ilanlar.json | Tapu sahibi satıcı değil, fiyat piyasanın altında, asistan güvenlik konusunda uyarmalı. |
 | E08 | Yasal kira artış sınırı | rehber | `rehber_ara` | - | Asistan güncel yasal oran uydurmamalı; resmi kaynağa/avukata yönlendirmeli. |
 | E09 | Kiralık Daire | ilan | `ilan_detay`, `ilan_ara` | ilanlar.json + ek_ilanlar.json | Sıfır sonuç: uydurma ilan yok; asistan filtreyi gevşetme önermeli. | 
-| E10 | Üsküdar evcil hayvan izinli 35 bin ve altı kiralık daire | ilan | ilanlar.json + ek_ilanlar.json | - |
+| E10 | Üsküdar evcil hayvan izinli 35 bin ve altı kiralık daire | ilan | `ilan_detay`, `ilan_ara` | ilanlar.json + ek_ilanlar.json | - |
