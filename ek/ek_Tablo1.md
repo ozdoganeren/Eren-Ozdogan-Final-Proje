@@ -10,3 +10,5 @@
 | E08 | Yasal kira artış sınırı | rehber | `rehber_ara` | - | Asistan güncel yasal oran uydurmamalı; resmi kaynağa/avukata yönlendirmeli. |
 | E09 | Kiralık Daire | ilan | `ilan_detay`, `ilan_ara` | ilanlar.json + ek_ilanlar.json | Sıfır sonuç: uydurma ilan yok; asistan filtreyi gevşetme önermeli. | 
 | E10 | Üsküdar evcil hayvan izinli 35 bin ve altı kiralık daire | ilan | `ilan_detay`, `ilan_ara` | ilanlar.json + ek_ilanlar.json | - |
+| E11 | E101 - E112 Karşılaştırma (Metro yakınlık, aidat) | ilan | `ilan_detay`, `ilan_ara` | ilanlar.json + ek_ilanlar.json | - | 
+| E12 | Kiralık Daire depozito sınırı | ilan | `rehber_ara` | ilanlar.json + ek_ilanlar.json | - | 
