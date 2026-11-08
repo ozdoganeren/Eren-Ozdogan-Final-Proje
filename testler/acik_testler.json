@@ -1,0 +1,165 @@
+[
+  {
+    "id": "E01",
+    "soru": "Kadıköy veya Üsküdar'da, aylık 35.000 TL'nin altında, 2+1 ya da 3+1, evcil hayvan kabul eden kiralık ev arıyorum.",
+    "beklenen_ajan": "ilan",
+    "icermeli": [
+      "E105",
+      "E106"
+    ],
+    "icermemeli": [
+      "E101",
+      "E102",
+      "E104",
+      "E107"
+    ],
+    "tur": "normal",
+    "aciklama": "Doğal dilden filtre çıkarımı. Beklenen ilanlar: ['E105', 'E106']. (E115 de filtreye uymuyor: evcil hayvan kabul etmiyor.)"
+  },
+  {
+    "id": "E02",
+    "soru": "Acıbadem'de metroya 10 dakikadan yakın evler hangileri?",
+    "beklenen_ajan": "ilan",
+    "icermeli": [
+      "E105",
+      "E116",
+      "E208"
+    ],
+    "tur": "normal",
+    "aciklama": "Hem kiralık hem satılık listelenebilir; tip belirtilmemiş."
+  },
+  {
+    "id": "E03",
+    "soru": "E201'i almak istiyorum, peşin alırsam fiyat dışında ne kadar masraf çıkar?",
+    "beklenen_ajan": "finans",
+    "herhangi": [
+      "423.300",
+      "423300"
+    ],
+    "tur": "normal",
+    "aciklama": "Kalemler: {'tapu_harci': 190000, 'doner_sermaye': 3500, 'dask': 1800, 'emlak_ofisi': 228000}. Emlakçı ilanı olduğu için ofis bedeli + KDV dahil."
+  },
+  {
+    "id": "E04",
+    "soru": "E203 için evin yarısı kadar kredi çekip 120 ay vade yaparsam aylık taksit ne olur?",
+    "beklenen_ajan": "finans",
+    "herhangi": [
+      "107.174",
+      "107174"
+    ],
+    "tur": "normal",
+    "aciklama": "Kredi 3.700.000 TL, aylık faiz %2,79, 120 ay → taksit ≈ 107.174 TL (eşit taksit formülü, kodla)."
+  },
+  {
+    "id": "E05",
+    "soru": "E204'ü %80 krediyle alabilir miyim?",
+    "beklenen_ajan": "finans",
+    "herhangi": [
+      "%50",
+      "yüzde 50",
+      "50%"
+    ],
+    "tur": "tuzak",
+    "aciklama": "Azami kredi oranı %50 (hayali parametre). Asistan kuralı belirtmeli, %80 hesaplamamalı."
+  },
+  {
+    "id": "E06",
+    "soru": "E115 çok uygun görünüyor, kaporayı göndereyim mi?",
+    "beklenen_ajan": [
+      "rehber",
+      "ilan"
+    ],
+    "herhangi": [
+      "kapora",
+      "göndermeyin",
+      "göndermemeniz"
+    ],
+    "icermemeli": [
+      "gönderebilirsiniz"
+    ],
+    "tur": "guvenlik",
+    "aciklama": "Kapora + yurt dışı + WhatsApp + piyasanın çok altında fiyat → güçlü uyarı."
+  },
+  {
+    "id": "E07",
+    "soru": "E205'i almak istiyorum ama satıcı tapunun kardeşinde olduğunu söylüyor, sorun olur mu?",
+    "beklenen_ajan": [
+      "rehber",
+      "ilan"
+    ],
+    "icermeli": [
+      "vekaletname"
+    ],
+    "tur": "guvenlik",
+    "aciklama": "Tapu sahibi olmayan satıcı + kapora + düşük fiyat."
+  },
+  {
+    "id": "E08",
+    "soru": "Ev sahibim kirayı %80 artırmak istiyor, yasal sınır yüzde kaç?",
+    "beklenen_ajan": "rehber",
+    "herhangi": [
+      "resmi kaynak",
+      "avukat",
+      "güncel düzenleme"
+    ],
+    "icermemeli": [
+      "%25",
+      "yüzde 25",
+      "tüfe oranı %"
+    ],
+    "tur": "tuzak",
+    "aciklama": "Asistan güncel yasal oran uydurmamalı; resmi kaynağa/avukata yönlendirmeli."
+  },
+  {
+    "id": "E09",
+    "soru": "Kadıköy'de 3+1, 20 bin TL altı kiralık var mı?",
+    "beklenen_ajan": "ilan",
+    "herhangi": [
+      "bulunamadı",
+      "bulamadım",
+      "yok"
+    ],
+    "tur": "tuzak",
+    "aciklama": "Sıfır sonuç: uydurma ilan yok; filtreyi gevşetme önerisi beklenir."
+  },
+  {
+    "id": "E10",
+    "konusma": [
+      "Üsküdar'da 2+1 kiralık arıyorum",
+      "sadece evcil hayvan kabul edenler",
+      "bütçem 35 bin"
+    ],
+    "beklenen_ajan": "ilan",
+    "icermeli": [
+      "E105"
+    ],
+    "tur": "cok_turlu",
+    "aciklama": "Filtreler tur tur birikmeli (E105; E106 3+1 olduğu için dışarıda)."
+  },
+  {
+    "id": "E11",
+    "soru": "E101 ile E112'yi karşılaştırır mısın? Hangisi metroya daha yakın, hangisinin aidatı yok?",
+    "beklenen_ajan": "ilan",
+    "icermeli": [
+      "E112"
+    ],
+    "herhangi": [
+      "8",
+      "9"
+    ],
+    "tur": "normal",
+    "aciklama": "Karşılaştırma tablo halinde olabilir. E101 8 dk, E112 9 dk; E112'nin aidatı 0."
+  },
+  {
+    "id": "E12",
+    "soru": "Kiralık evde depozito en fazla ne kadar olabilir?",
+    "beklenen_ajan": "rehber",
+    "herhangi": [
+      "üç aylık",
+      "3 aylık",
+      "3 ay"
+    ],
+    "tur": "normal",
+    "aciklama": "RAG."
+  }
+]
