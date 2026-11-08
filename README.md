@@ -1,0 +1,1 @@
+# Evbul---Emlak-Ilan-Asistani---Cok-Ajanli-RAG-Sistemleri
