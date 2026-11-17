@@ -1,7 +1,7 @@
 def ilan_ara(
     tip: str | None = None,
     il: str | None = None,
-    ilceler: list[str] | None = None,
+    ilce: list[str] | None = None,
     mahalle: str | None = None,
     oda: str | None = None,
     min_fiyat: float | None = None,
@@ -19,7 +19,7 @@ def ilan_ara(
 
     temiz_tip = tip.strip().lower() if tip else None
     temiz_il = il.strip().lower() if il else None
-    temiz_ilceler = (
+    temiz_ilce = (
         [i.strip().lower() for i in ilceler] if ilceler else None
     )
     temiz_mahalle = mahalle.strip().lower() if mahalle else None
@@ -33,7 +33,7 @@ def ilan_ara(
         continue
       if temiz_il and ilan.get("il", "").lower() != temiz_il:
         continue
-      if temiz_ilceler:
+      if temiz_ilce:
         ilan_ilce = ilan.get("ilce", "").lower()
         if not any(i in ilan_ilce for i in temiz_ilceler):
           continue
