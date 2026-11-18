@@ -19,9 +19,12 @@ def ilan_ara(
 
     temiz_tip = tip.strip().lower() if tip else None
     temiz_il = il.strip().lower() if il else None
+    
+    # DÜZELTME 1: 'ilceler' -> 'ilce'
     temiz_ilce = (
-        [i.strip().lower() for i in ilceler] if ilceler else None
+        [i.strip().lower() for i in ilce] if ilce else None
     )
+    
     temiz_mahalle = mahalle.strip().lower() if mahalle else None
     temiz_oda = oda.strip().lower() if oda else None
     temiz_metin = (
@@ -35,8 +38,11 @@ def ilan_ara(
         continue
       if temiz_ilce:
         ilan_ilce = ilan.get("ilce", "").lower()
-        if not any(i in ilan_ilce for i in temiz_ilceler):
+        
+        # DÜZELTME 2: 'temiz_ilceler' -> 'temiz_ilce'
+        if not any(i in ilan_ilce for i in temiz_ilce):
           continue
+          
       if temiz_mahalle and ilan.get("mahalle", "").lower() != temiz_mahalle:
         continue
       if temiz_oda and ilan.get("oda", "").lower() != temiz_oda:
