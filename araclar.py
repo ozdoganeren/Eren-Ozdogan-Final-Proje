@@ -1,3 +1,6 @@
+import json
+import re
+
 def ilan_ara(
     tip: str | None = None,
     il: str | None = None,
@@ -26,23 +29,19 @@ def ilan_ara(
         temiz_ilce = [i.strip().lower() for i in ilce if i]
     else:
         temiz_ilce = None
-    )
     
     temiz_mahalle = mahalle.strip().lower() if mahalle else None
     temiz_oda = oda.strip().lower() if oda else None
-    temiz_metin = (
-        serbest_metin.strip().lower() if serbest_metin else None
-    )
+    temiz_metin = serbest_metin.strip().lower() if serbest_metin else None
 
     for ilan in ilanlar:
       if temiz_tip and ilan.get("tip", "").lower() != temiz_tip:
         continue
       if temiz_il and ilan.get("il", "").lower() != temiz_il:
         continue
+        
       if temiz_ilce:
         ilan_ilce = ilan.get("ilce", "").lower()
-        
-        # DÜZELTME 2: 'temiz_ilceler' -> 'temiz_ilce'
         if not any(i in ilan_ilce for i in temiz_ilce):
           continue
           
@@ -102,7 +101,6 @@ def ilan_ara(
   except Exception as e:
     return {"hata": f"Arama sırasında hata oluştu: {str(e)}"}
 
----
 
 def ilan_detay(ilan_id: str) -> dict:
   try:
@@ -117,7 +115,6 @@ def ilan_detay(ilan_id: str) -> dict:
   except Exception as e:
     return {"hata": f"İlan detayları alınamadı: {str(e)}"}
 
----
 
 def ilan_risk_kontrol(ilan_id: str) -> dict:
   try:
@@ -172,7 +169,6 @@ def ilan_risk_kontrol(ilan_id: str) -> dict:
   except Exception as e:
     return {"hata": f"Risk kontrolü yapılamadı: {str(e)}"}
 
----
 
 def kredi_hesapla(ilan_id: str, kredi_orani: float, vade_ay: int) -> dict:
   try:
@@ -217,7 +213,6 @@ def kredi_hesapla(ilan_id: str, kredi_orani: float, vade_ay: int) -> dict:
   except Exception as e:
     return {"hata": f"Kredi hesaplama hatası: {str(e)}"}
 
----
 
 def masraf_hesapla(ilan_id: str, kredi_kullanilacak_mi: bool = False) -> dict:
   try:
@@ -277,42 +272,6 @@ def masraf_hesapla(ilan_id: str, kredi_kullanilacak_mi: bool = False) -> dict:
   except Exception as e:
     return {"hata": f"Masraf hesaplanamadı: {str(e)}"}
 
----
-
-def rehber_ara(sorgu: str, k: int = 3) -> list[dict]:
-  try:
-    if not sorgu or not sorgu.strip():
-      return [{"hata": "Geçerli bir arama sorgusu girilmedi."}]
-
-    rehber_metinleri = VERI.get("rehber", [])
-    if not rehber_metinleri:
-      return [{"hata": "Rehber veritabanı boş veya bulunamadı."}]
-
-    sorgu_temiz = sorgu.lower().strip()
-    uwan_sonuclar = []
-
-    for item in rehber_metinleri:
-      icerik = item.get("icerik", "").lower()
-      baslik = item.get("baslik", "").lower()
-
-      if sorgu_temiz in icerik or sorgu_temiz in baslik:
-        uwan_sonuclar.append({
-            "baslik": item.get("baslik"),
-            "icerik": item.get("icerik"),
-            "kaynak": item.get("kaynak", "rehber.md"),
-        })
-
-    if not uwan_sonuclar:
-      return [{
-          "bilgi": "Aradığınız kritere uygun rehber kaydı bulunamadı.",
-          "sonuc_sayisi": 0,
-      }]
-
-    return uwan_sonuclar[:k]
-  except Exception as e:
-    return [{"hata": f"Rehber araması sırasında hata oluştu: {str(e)}"}]
-
----
 
 def rehber_ara(sorgu: str, k: int = 3) -> list[dict]:
   try:
