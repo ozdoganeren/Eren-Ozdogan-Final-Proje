@@ -20,9 +20,12 @@ def ilan_ara(
     temiz_tip = tip.strip().lower() if tip else None
     temiz_il = il.strip().lower() if il else None
     
-    # DÜZELTME 1: 'ilceler' -> 'ilce'
-    temiz_ilce = (
-        [i.strip().lower() for i in ilce] if ilce else None
+    if isinstance(ilce, str):
+        temiz_ilce = [ilce.strip().lower()]
+    elif isinstance(ilce, list):
+        temiz_ilce = [i.strip().lower() for i in ilce if i]
+    else:
+        temiz_ilce = None
     )
     
     temiz_mahalle = mahalle.strip().lower() if mahalle else None
