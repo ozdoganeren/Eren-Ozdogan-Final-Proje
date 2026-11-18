@@ -1,7 +1,7 @@
 def ilan_ara(
     tip: str | None = None,
     il: str | None = None,
-    ilce: list[str] | None = None,
+    ilce: str | list[str] | None = None,
     mahalle: str | None = None,
     oda: str | None = None,
     min_fiyat: float | None = None,
